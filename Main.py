@@ -15,9 +15,6 @@ def main():
 
     
  #Datos Array
-   
-    
-    
     
 # Datos vacas
   node = DoublyLinkedList()
@@ -71,22 +68,20 @@ def main():
             print("1) Imprimir lista")
             print("2) Limpiar Lista")
             print("3) Encontrar un elemento")
-            print("4) Insertar un elemento")
-            print("5) Remover un elemento")
-            print("6) Encontra un k elemento")
-            print("8) Insertar elemento al final")
-            print("7) Salir")
-            print("9) Lista de vacas")
-            print("11) Cargar la lista")
-            print("12) Notificaciones")
-            print("13) Ver Notificaciones")
+            print("4) Insertar un elemento en la lista")
+            print("5) Insertar un elemento en la lista de listas")
+            print("6) Remover un elemento")
+            print("7) Encontra un k elemento")
+            print("8) Salir")
+            print("9) Cargar la lista")
+            print("10) Notificaciones")
+            print("11) Ver Notificaciones")
             
         
             try:
                 op = int(input())
             except:
                 print("Dato invalido")
-            
             
             
             if op == 1:
@@ -96,11 +91,9 @@ def main():
                     print("Lista vacas vacía")
                     
             elif op == 2:
-                
                 vacas = DoublyLinkedList()
             
             elif op == 3:
-                
                 print("Digite la posisión de la lista")
                 try:
                     posicion = int(input())
@@ -117,61 +110,65 @@ def main():
 
 
             elif op == 4:
-                '''
                 print("Digite la posición del dato a insertar")
                 posicion = int(input())
-                nodeaxu = ListedLinkList(None)
-                nodoFinal = ListedLinkList(None) 
-                print("Digite el codigo de la vaca")
-                codigo = input()
-                nodeaxu,nodoFinal = nodeaxu.InsertElementFinal(codigo, nodoFinal)
-                print("1 si es lechera, 0 si no")
-                lechera = input()
-                nodeaxu,nodoFinal = nodeaxu.InsertElementFinal(lechera, nodoFinal)
-                print("Digite el peso de la vaca")
-                peso = input()
-                nodeaxu,nodoFinal = nodeaxu.InsertElementFinal(peso, nodoFinal)
+                print("Digite el dato a insertar")
+                dato = input()
+                
+                val = node.insert_node(posicion, dato)
+                if val == False:
+                    print("Vaca no insertada")
+                else:
+                    print("Vaca insertada")
 
-                nodeaxu = node.InsertElement(posicion,nodeaxu,tamañoNotificaciones)
-                if posicion <= vacasSize:
-                    vacasSize += 1
-                '''
-                pass
                 
             elif op == 5:
+                node = DoublyLinkedList()
+                print("Digite la posición del dato a insertar")
+                posicion = int(input())
+                print("Digite el codigo de la vaca")
+                codigo = input()
+                node = node.add_last(codigo)
+                print("1 si es lechera, 0 si no")
+                lechera = input()
+                node = node.add_last(codigo)
+                print("Digite el peso de la vaca")
+                peso = input()
+                node = node.add_last(peso)
+
+                val = vacas.insert_node(posicion, node)
+                
+                if val == False:
+                    print("Vaca no insertada")
+                else:
+                    print("Vaca insertada")
+
+#######################################################
+            elif op == 6:
                 print("Digite la posicion del dato a eliminar")
                 try:
                     position = int(input())
                     vacas = vacas.RemoveElement(position)
                 except:
                     print("Digite el dato correctamente")
-                    
+#########################################################
                 
-            elif op == 6:
+            elif op == 7:
                 print("Digite la posición del elemento a encontrar")
                 try:
                     k = int(input())
-                    vacas.FindKth(k).printList()
+                    vacas.FindKth(k).PrintList()
                 except:
                     print("Digite el dato correctamente")
-            elif op == 7:
+            
+            elif op == 8:
                 break
         
-                    
-                    
             elif op == 9:
-                if vacas != None:
-                    data = input()
-                    vacas.add_last(data)
-                else:
-                    print("Lista vacía carguela, opcion 11")
-                    
-                    
-                
-            elif op == 11:
                 print("Cargar")
                 vacas = Sistematizar.cargarDoublyLinkedList(0)
-            elif op == 12:
+            
+            elif op == 10:
                 print("vacasSize ",vacas.count)
                 
                 if vacas.head != None:
@@ -184,18 +181,14 @@ def main():
                 else:
                     print("Lista vacía")
                               
-            elif op == 13:
+            elif op == 11:
                     notification.showNotifications()
-                
-            elif op == 14:
-                vacas.printList()
             
             else:
                 print("Opción invalida")
         
             a = input("Presione ENTER")
-            
-                 
+                    
       elif opM == 3:
           print("GESTIÓN DE PEDIDOS")
           op = 0  
@@ -208,7 +201,6 @@ def main():
                 print("3) Control de pedidos")
                 print("4) Salir")
                 print("5) Subir datos")
-                print("6) Cargar datos")
             
             
                 op = int(input())

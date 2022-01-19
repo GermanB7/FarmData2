@@ -1,4 +1,5 @@
 from DoublyLinkList import *
+from Queue import DoubleLinkedListQueue
 class Sistematizar():
     global lista_archivos
     lista_archivos = [
@@ -36,7 +37,7 @@ class Sistematizar():
 
     def cargarDoubleLinkedListQueue(arch):
         global lista_archivos
-        lista_c = DoublyLinkedList()
+        lista_c = DoubleLinkedListQueue()
         with open(lista_archivos[arch], 'r') as txt:
             while True:
                 linea = txt.readline()

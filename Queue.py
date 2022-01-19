@@ -9,6 +9,7 @@ class DoubleLinkedListQueue(DoublyLinkedList):
             print("Cola vacía")
             return 
         head = self.head
+        print("Aqui estamos xd")
         if type(head.data) != DoubleLinkedListQueue and type(head.data) != DoublyLinkedList:
             while head.next != None:
                 print(head.data, end = " ")
@@ -16,9 +17,9 @@ class DoubleLinkedListQueue(DoublyLinkedList):
             print(head.data)
         else:
             while head.next != None:
-                head.data.printQueue()
+                head.data.PrintList()
                 head = head.next
-            head.data.printQueue()
+            head.data.PrintList()
 
     def enqueue(self, data):
         if self.head is None:               # fc
