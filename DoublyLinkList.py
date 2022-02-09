@@ -1,3 +1,5 @@
+import time
+
 class Node(object):
     def __init__(self, data = None, next = None , prev = None):
         self.data = data                          # fd + fa
@@ -159,8 +161,23 @@ class DoublyLinkedList(object):
 def main():
     lista = DoublyLinkedList()
     datos = int(input())
+    ini = time.time()
     for i in range(datos):
-        lista.a
+        lista.add_first(i+1)
+    end = time.time() - ini
+    print("Tiempo Insert first: ",end, "Ms " )
+
+    ini = time.time()
+    for i in range(datos):
+        lista.FindKth(i)
+    end = time.time() - ini
+    print("Tiempo Búsqueda: ",end, "Ms " )
+
+    ini = time.time()
+    for i in range(datos):
+        lista.RemoveElement(i+1)
+    end = time.time() - ini
+    print("Tiempo Eliminación: ",end, "Ms " )
 
 
 main()
