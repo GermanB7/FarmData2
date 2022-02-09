@@ -156,3 +156,11 @@ class DoublyLinkedList(object):
             act.prev = node
 
 
+def main():
+    lista = DoublyLinkedList()
+    datos = int(input())
+    for i in range(datos):
+        lista.a
+
+
+main()
