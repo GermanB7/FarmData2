@@ -179,5 +179,4 @@ def main():
     end = time.time() - ini
     print("Tiempo Eliminación: ",end, "Ms " )
 
-
-main()
+#main()

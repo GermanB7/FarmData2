@@ -54,7 +54,6 @@ def main():
 
     opM = 0
     print("Bienevido al sistema farm data")
-    print(" ")
     while opM != 5:
         print("")
         
@@ -336,6 +335,5 @@ def main():
                     print(elem)
                 elif op == 4:
                     t.Delete(int(input("Ingrese el código del animal a eliminar: ")))
-            
-                            
+                             
 main()

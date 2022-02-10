@@ -90,33 +90,33 @@ class Node:
             print("Dato no encontrado")
         
 
-node = Node(1)           
-cont = 1
-numbers = int(input())
-start = time.time()
-while numbers > cont:
-    node.insert(cont)
-    cont += 1
-end = time.time()
-print("Insercion:",end-start)
+# node = Node(1)           
+# cont = 1
+# numbers = int(input())
+# start = time.time()
+# while numbers > cont:
+#     node.insert(cont)
+#     cont += 1
+# end = time.time()
+# print("Insercion:",end-start)
   
-cont = 0
-startTime = time.time()
-while(cont < numbers):
-    cont += 1
-    node.find(cont, node)
-endTime = time.time()
-print("Find:",endTime - startTime)
+# cont = 0
+# startTime = time.time()
+# while(cont < numbers):
+#     cont += 1
+#     node.find(cont, node)
+# endTime = time.time()
+# print("Find:",endTime - startTime)
 
 
-cont = 0
-root = node
-startTime = time.time()
-while(cont < numbers):
-    cont += 1 
-    root = node.deleteNode(root, cont)
-endTime = time.time()
-print("Delete:",endTime - startTime)
+# cont = 0
+# root = node
+# startTime = time.time()
+# while(cont < numbers):
+#     cont += 1 
+#     root = node.deleteNode(root, cont)
+# endTime = time.time()
+# print("Delete:",endTime - startTime)
 
 
-print("----------------------")
+# print("----------------------")

@@ -9,7 +9,7 @@ class DoubleLinkedListQueue(DoublyLinkedList):
             print("Cola vacía")
             return 
         head = self.head
-        print("Aqui estamos xd")
+
         if type(head.data) != DoubleLinkedListQueue and type(head.data) != DoublyLinkedList:
             while head.next != None:
                 print(head.data, end = " ")
@@ -25,9 +25,11 @@ class DoubleLinkedListQueue(DoublyLinkedList):
         if self.head is None:               # fc
             node = Node(data)               # fd 
             self.head = node
+            self.tail = node
+            self.count += 1
             return
-
         node = Node(data)
+        self.tail.next = node
         node.prev = self.tail
         self.tail = node
         self.count += 1
@@ -60,7 +62,7 @@ class DoubleLinkedListQueue(DoublyLinkedList):
         else:
             print("Cola vacía")
             
-def main():
+def mainQueue():
     cola = DoubleLinkedListQueue()
     datos = int(input())
     ini = time.time()
@@ -69,16 +71,19 @@ def main():
     end = time.time() - ini
     print("Tiempo Enqueu: ",end, "Ms " )
 
-    ini = time.time()
-    for i in range(datos):
-        cola.dequeue(i)
-    end = time.time() - ini
-    print("Tiempo Dequeue: ",end, "Ms " )
 
     ini = time.time()
+    tiempo1 = 0
+    tiempo2 = 0
     for i in range(datos):
-        cola.RemoveElement(i+1)
+        t = time.time()
+        cola.Peek()
+        tiempo1 += time.time()-t
+        t = time.time()
+        cola.dequeue()
+        tiempo2 += time.time()-t
     end = time.time() - ini
-    print("Tiempo Eliminación: ",end, "Ms " )
+    print("Tiempo Peek: ",tiempo1, "Ms " )
+    print("Tiempo Dequeue: ",tiempo2, "Ms " )
 
-main()
+#mainQueue()

@@ -204,4 +204,4 @@ def main2():
     print("Tiempo Eliminación: ",end, "Ms " )
         
 
-main2()
+#main2()
