@@ -60,3 +60,25 @@ class DoubleLinkedListQueue(DoublyLinkedList):
         else:
             print("Cola vacía")
             
+def main():
+    cola = DoubleLinkedListQueue()
+    datos = int(input())
+    ini = time.time()
+    for i in range(datos):
+        cola.enqueue(i+1)
+    end = time.time() - ini
+    print("Tiempo Enqueu: ",end, "Ms " )
+
+    ini = time.time()
+    for i in range(datos):
+        cola.dequeue(i)
+    end = time.time() - ini
+    print("Tiempo Dequeue: ",end, "Ms " )
+
+    ini = time.time()
+    for i in range(datos):
+        cola.RemoveElement(i+1)
+    end = time.time() - ini
+    print("Tiempo Eliminación: ",end, "Ms " )
+
+main()
